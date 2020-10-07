@@ -1,0 +1,409 @@
+\documentclass[11pt]{beamer}
+\usepackage{listings} % Include the listings-package
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb, amsfonts, latexsym, cancel}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{booktabs} % Allows the use of \toprule, 
+\usepackage{filecontents}
+\usepackage{courier} %% Sets font for listing as Courier.
+\usepackage{listings}
+\usepackage{ragged2e}
+
+\usepackage{media9}
+
+\usepackage{animate}
+
+%\usepackage{listings, xcolor}
+\lstset{
+tabsize = 2, %% set tab space width
+showstringspaces = false, %% prevent space marking in strings, string is defined as the text that is generally printed directly to the console
+numbers = left, %% display line numbers on the left
+commentstyle = \color{green}, %% set comment color
+keywordstyle = \color{blue}, %% set keyword color
+stringstyle = \color{red}, %% set string color
+rulecolor = \color{black}, %% set frame color to avoid being affected by text color
+basicstyle = \small \ttfamily , %% set listing font and size
+breaklines = true, %% enable line breaking
+numberstyle = \tiny,
+}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\definecolor{urlColor}{rgb}{0.06, 0.3, 0.57}
+\definecolor{linkColor}{rgb}{0.57, 0.0, 0.04}
+\definecolor{fileColor}{rgb}{0.0, 0.26, 0.26}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkColor,
+    filecolor=fileColor,      
+    urlcolor=urlColor,
+}
+\urlstyle{same}
+\setbeamercovered{transparent}
+
+\usetheme{CambridgeUS}
+
+
+\title[]{\bf\Huge Taller: Design Systems}
+\subtitle{Interacción Humano Computador}
+
+\author[rescobedoq]
+{
+    INTEGRANTES:
+	\newline Gabriel Callo Condori 
+	\newline José Rodríguez Mercado
+	\newline José Miguel Vera Mamani
+	\newline Rosario Lohana Alegre Linares
+}
+\institute[UNSA]
+{
+\inst{1}% 
+System Engineering School\\
+System Engineering and Informatic Department\\
+Production and Services Faculty\\
+San Agustin National University of Arequipa
+}
+
+\date[2020-10-06]{\scriptsize{2020-10-06}}
+\logo{\includegraphics[width=3.0cm]{logo_unsa.jpg}}
+%\titlegraphic{\includegraphics[width=4.5cm]{logo_unsa.jpg}}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Contenido}
+\tableofcontents
+\end{frame}
+
+\section{Definición}
+\begin{frame}
+\frametitle{Definición}
+\begin{itemize}
+\item Existen varias definiciones como por ejemplo: uxpin.com, medium.muz.li, Freecodcamp.org, css-tricks.com.\newline
+\item De todas ellas se puede inferir la siguiente definición: \newline{\it "Es un ecosistema \textbf{dinámico, escalable y ordenado} de elementos gráficos, código y documentación, para la construcción de cualquier producto.\\Donde interactúan, aprenden y se toman decisiones para \textbf{todas las partes involucradas} en la construcción del producto."}
+\end{itemize}
+\end{frame}
+
+\section{Elementos Básicos}
+\begin{frame}
+\frametitle{Elementos Básicos}
+\begin{itemize}
+\item Principios de Diseño
+\item Tono de Voz
+\item Colores y Tipografía
+\item Componentes de Diseño
+\end{itemize}
+\justifying \vspace{5mm} Hay muchos otros, pero dependen de los pensamientos de la empresa.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{sd_elements.png} 
+\end{figure}
+\end{frame}
+
+\section{Principios de Diseño}
+\begin{frame}
+\frametitle{Principios de Diseño}
+\justifying \vspace{5mm} Son \textbf{paradigmas} que dirigen las \textbf{decisiones del diseño}.\newline\addlinespace
+El concepto de Principios de Diseño no se refiere a los \textbf{fundamentos universales del diseño} sino a como el equipo de desarrollo \textbf{afronta} las decisiones del diseño (Es como establecer \textbf{reglas} del actuar de la empresa de manera gráfica).
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{sd_pd.jpg} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+
+\newline \large {\bf Medium}
+\newline Herramienta con muchos artículos de programación. \newline Principios de diseño:\addlinespace
+\begin{minipage}[c]{0.55\textwidth} 
+\begin{itemize}
+    \item {\bf Dirección} sobre opciones\newline (dirección clara)
+    \item {\bf Apropiado} sobre consistencia\newline (facilidad)
+    \item {\bf En evolución} más que finalizado\newline (dinamismo)
+\end{itemize}
+\end{minipage} 
+\begin{minipage}[c]{0.40\textwidth} 
+\includegraphics[width=4.5cm, height=3.5cm]{medium.jpeg} 
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\begin{minipage}[c]{0.35\textwidth} 
+\includegraphics[width=3cm]{apple.png} 
+\end{minipage}
+\begin{minipage}[c]{0.60\textwidth} 
+{\Large \bf Apple}\newline Principios de diseño:\addlinespace
+\begin{itemize}
+    \item {\bf Integridad Estética:} Una visualización completa.
+    \item {\bf Consistencia:} Por el alcance de Apple.
+    \item {\bf Manipulación Directa}
+    \item {\bf Feedback} (Retroalimentación)
+    \item {\bf Metáforas}
+    \item {\bf Control Visual}
+\end{itemize}
+\end{minipage} 
+\end{frame}
+
+\begin{frame}
+\newline {\Large \bf Asana}\newline Principios de diseño:\addlinespace
+\begin{minipage}[c]{0.55\textwidth} 
+\begin{itemize}
+    \item Permite enfocarse en el \textbf{trabajo} y no en la \textbf{interfaz}.
+    \item Incrementa la confianza a través de la \textbf{claridad}.
+    \item Promueve la \textbf{dinámica interpersonal} y la \textbf{productividad}.
+\end{itemize}
+\end{minipage}
+\begin{minipage}[c]{0.30\textwidth} 
+\includegraphics[width=3.5cm, height=2.5cm]{asana.png} 
+\end{minipage}
+\end{frame}
+
+\section{Tono de Voz}
+\begin{frame}
+\frametitle{Tono de voz}
+\justifying \vspace{5mm} Es la \textbf{forma} en que la marca o producto se \textbf{comunica} con sus usuarios.\newline
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{tono.jpg} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{minipage}[c]{0.55\textwidth} 
+\begin{itemize}
+    \item We are plainspoken (hablamos \textbf{claro}).
+    \item We are genuine (No se guían de \textbf{patrones establecidos} en lo posible).
+    \item We are translators (No usar \textbf{lenguaje técnico}).
+    \item Our Humor is dry (Usar sentido del \textbf{humor} en el momento apropiado).
+\end{itemize}
+\end{minipage}
+\begin{minipage}[c]{0.30\textwidth} 
+\includegraphics[width=5cm]{mail_chimp.png} 
+\end{minipage}
+\end{frame}
+
+
+\begin{frame}
+\includemedia[width=12cm, height=7cm,activate=pageopen,
+passcontext,
+transparent,
+addresource=acciones.mp4,
+flashvars={source=acciones.mp4}
+]{\includegraphics[width=12cm, height=7cm]{acciones.jpg}}{VPlayer.swf}
+\end{frame}
+
+\section{Colores y Tipografías}
+\begin{frame}
+\frametitle{Colores y Tipografías}
+Características Básicas
+\begin{itemize}
+\item COLORES
+\end{itemize}
+
+\begin{minipage}[c]{0.6\textwidth} 
+\includegraphics[width=7cm, height=3.5cm]{gov_uk.jpg} 
+\end{minipage}
+\begin{minipage}[c]{0.3\textwidth} 
+\includegraphics[width=4.7cm, height=3.5cm]{material_design.JPG} 
+\end{minipage} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Paletas de Accesibilidad}
+\begin{minipage}[c]{0.5\textwidth} 
+\includegraphics[width=6cm, height=6cm]{shopify.JPG} 
+\end{minipage}
+\begin{minipage}[c]{0.4\textwidth} 
+\includegraphics[width=6cm, height=5.7cm]{IBM.JPG} 
+\end{minipage} 
+\end{frame}
+
+\section{Componentes de Diseño}
+\begin{frame}
+\begin{itemize}
+\item Colección de Elementos
+\item Múltiples Veces
+\end{itemize}
+\frametitle{Componentes de Diseño}
+\begin{minipage}[c]{0.45\textwidth} 
+\includegraphics[width=5.5cm, height=2.5cm]{adobe.JPG} 
+\newline \newline \newline \newline \newline \newline \newline \newline
+\end{minipage}
+\begin{minipage}[c]{0.3\textwidth} 
+\includegraphics[width=6.5cm, height=5cm]{audi.JPG} 
+\newline \newline \newline
+\end{minipage} 
+\end{frame}
+
+\section{Guía de Diseño}
+\begin{frame}
+\begin{itemize}
+\item Importante Documentar
+\end{itemize}
+\frametitle{Guía de Diseño}
+\includegraphics[width=12cm, height=4.8cm]{guia_de_ilustración.JPG} 
+\newline \newline \newline 
+\end{frame}
+
+\section{Guías de Onboarding, Mobile Onboarding y Animaciones}
+\begin{frame}
+\frametitle{Guías de Onboarding, Mobile Onboarding y Animaciones}
+\includemedia[width=12cm, height=7.5cm,activate=pageopen,
+passcontext,
+transparent,
+addresource=carga.mp4,
+flashvars={source=carga.mp4}
+]{\includegraphics[width=12cm, height=7.5cm]{carga.JPG}}{VPlayer.swf}
+\newline
+\end{frame}
+
+\section{Micro Interacciones}
+\begin{frame}
+\frametitle{Micro Interacciones}
+\includemedia[width=12cm, height=7.5cm,activate=pageopen,
+passcontext,
+transparent,
+addresource=interacciones.mp4,
+flashvars={source=interacciones.mp4}
+]{\includegraphics[width=12cm, height=7.5cm]{intera.jpg}}{VPlayer.swf}
+\newline
+\end{frame}
+
+\section{Estilos de Diseño}
+\begin{frame}
+\frametitle{Estilos de Diseño}
+\begin{minipage}[c]{7cm} 
+\includegraphics[width=7cm, height=6cm]{estilo.JPG} 
+\end{minipage}
+\begin{minipage}[c]{4cm} 
+Realism Sketmorphic
+\begin{itemize}
+\item Sombras
+\item Texturas
+\item Detalles
+\end{itemize}
+Flat Design
+\begin{itemize}
+\item Claridad
+\item Sencillez
+\item Diseño Responsive (adaptabilidad)
+\end{itemize}
+\end{minipage} 
+\end{frame}
+
+\section{Diseño Atómico}
+\begin{frame}
+\frametitle{Diseño Atómico}
+\begin{minipage}[c]{4cm} 
+Es un sistema de trabajo que se basa en la creación de elementos modulares sencillos para crear estructuras de información mucho mas complejas.
+\begin{figure}[posición]
+  \centering
+  \includegraphics[width=3cm, height=2cm]{biblioteca.JPG} 
+\end{figure}
+\end{minipage}
+\begin{minipage}[c]{7cm} 
+\includegraphics[width=8cm, height=5cm]{emerge.JPG}
+\end{minipage} 
+\end{frame}
+
+\section{Bibliotecas de Componentes}
+\begin{frame}
+\frametitle{Bibliotecas de Componentes}
+\includegraphics[width=12cm, height=6cm]{componentes.JPG} 
+\newline \newline
+\end{frame}
+
+\section{Reglas de Diseño}
+\begin{frame}
+\frametitle{Reglas de Diseño}
+\includegraphics[width=12cm, height=5cm]{reglas.JPG} 
+\newline \newline
+\end{frame}
+
+\section{Reglas de Comunicación Visual}
+\begin{frame}
+\frametitle{Reglas de Comunicación Visual}
+\begin{minipage}[c]{6cm} 
+\begin{itemize}
+\item Armonía
+\end{itemize}
+\begin{figure}[posición]
+  \centering
+  \includegraphics[width=5cm, height=4cm]{armonia.JPG} 
+\end{figure}
+\end{minipage}
+\begin{minipage}[c]{5.5cm} 
+\begin{itemize}
+\item Ritmo
+\end{itemize}
+\begin{figure}[posición]
+  \centering
+  \includegraphics[width=5cm, height=4cm]{ritmo.JPG} 
+\end{figure}
+\end{minipage} 
+\end{frame}
+
+
+\begin{frame}
+\includegraphics[width=12cm, height=6cm]{comunicacion.JPG} 
+\end{frame}
+
+\section{Ejemplos en Producción}
+\begin{frame}
+\frametitle{Ejemplos en Producción}
+\begin{minipage}[c]{12cm} 
+    \begin{minipage}[c]{6cm} 
+    \begin{itemize}
+    \end{itemize}
+    \begin{figure}[posición]
+      \centering
+      \includegraphics[width=5cm, height=3cm]{material.JPG} 
+    \end{figure}
+    \end{minipage}
+    \begin{minipage}[c]{5cm} 
+    {\bf Material Design:} Es un lenguaje visual que sintetiza los principios clásicos del buen diseño con la innovación de la tecnología y la ciencia
+    \end{minipage} 
+\end{minipage}
+
+\begin{minipage}[c]{12cm} 
+    \begin{minipage}[c]{6cm} 
+    \begin{itemize}
+    \end{itemize}
+    \begin{figure}[posición]
+      \centering
+      \includegraphics[width=5cm, height=3cm]{repo.JPG} 
+    \end{figure}
+    \end{minipage}
+    \begin{minipage}[c]{5cm} 
+    {\bf Design Systems Repo:} Una lista completa y seleccionada de sistemas de diseño, guías de estilo y bibliotecas de patrones que puede ser utilizada como inspiración.
+    \end{minipage} 
+\end{minipage}
+\end{frame}
+
+\section{Referencias}
+\begin{frame}
+\frametitle{Referencias}
+\begin{itemize}
+\item Taller: Design Systems, Carlos Arbieto (2020). www.youtube.com/watch?v=meO8gkOK1pc&feature=youtu.be
+\item Design process simplified - https://www.uxpin.com/
+\item Muzli Magazine - https://medium.muz.li/?gi=95d2e01562dd
+\item Free Code Camp - https://www.freecodecamp.org/
+\item CSS Tricks - https://css-tricks.com/
+\item Figma - https://www.figma.com/
+\end{itemize}
+\end{frame}
+
+\end{document}
